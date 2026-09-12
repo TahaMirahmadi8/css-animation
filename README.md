@@ -8,7 +8,9 @@
 A growing collection of modern CSS animations and UI components. This repository serves as my personal playground to experiment with smooth transitions, interactive buttons, dynamic loaders, and complex card designs.
 
 ## Live Demo
-**[Click here to view the components in action](https://TahaMirahmadi8.github.io/css-animation/)**
+**https://TahaMirahmadi8.github.io/css-animation/** + html file
+* https://TahaMirahmadi8.github.io/css-animation/button1.html
+* and ...
 
 ---
 
