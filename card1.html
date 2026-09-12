@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/card1.css" />
+        <title>Card 1</title>
+    </head>
+    <body>
+        <div class="card-wrapper">
+            <div class="card" id="card" onscroll="updateButtons()">
+                <h1>title card</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolore nulla ut dolorum sequi accusantium est laboriosam eum
+                    beatae quis veritatis, vel ipsam impedit voluptatum
+                    nesciunt, libero deleniti minima suscipit. Possimus ad
+                    cumque consectetur nihil quam saepe quo, reiciendis nisi,
+                    est molestias adipisci non dolorem quisquam omnis error
+                    odio, excepturi corrupti beatae nulla. Ipsam accusantium ut
+                    hic dignissimos dolorem fugit ea, cumque expedita dolore
+                    deserunt, recusandae animi vel officiis quis exercitationem,
+                    ipsa consectetur voluptatibus placeat. Minima ipsa, cumque
+                    dolores at sint consequatur, necessitatibus officia deleniti
+                    earum sunt sit numquam rerum quisquam?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolore nulla ut dolorum sequi accusantium est laboriosam eum
+                    beatae quis veritatis, vel ipsam impedit voluptatum
+                    nesciunt, libero deleniti minima suscipit. Possimus ad
+                    cumque consectetur nihil quam saepe quo, reiciendis nisi,
+                    est molestias adipisci non dolorem quisquam omnis error
+                    odio, excepturi corrupti beatae nulla. Ipsam accusantium ut
+                    hic dignissimos dolorem fugit ea, cumque expedita dolore
+                    deserunt, recusandae animi vel officiis quis exercitationem,
+                    ipsa consectetur voluptatibus placeat. Minima ipsa, cumque
+                    dolores at sint consequatur, necessitatibus officia deleniti
+                    earum sunt sit numquam rerum quisquam?
+                </p>
+            </div>
+            <button class="scroll-btn up" id="upBtn" onclick="scrollContent(-100)">⬆</button>
+            <button class="scroll-btn down" id="downBtn" onclick="scrollContent(100)">⬇</button>
+        </div>
+    </body>
+    <script>
+        const card = document.getElementById("card");
+        const upBtn = document.getElementById("upBtn");
+        const downBtn = document.getElementById("downBtn");
+        function updateButtons() {
+            const canScrollUp = card.scrollTop > 0;
+            const canScrollDown =
+                card.scrollTop + card.clientHeight < card.scrollHeight;
+            upBtn.classList.toggle("show-btn", canScrollUp);
+            downBtn.classList.toggle("show-btn", canScrollDown);
+        }
+        function scrollContent(amount) {
+            card.scrollBy({ top: amount, behavior: "smooth" });
+        }
+        updateButtons();
+    </script>
+</html>

@@ -1,0 +1,69 @@
+:root {
+    --color: white;
+    --bg-color: #272727;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+.loader {
+    width: 7rem;
+    position: relative;
+}
+.loader::before,
+.loader::after,
+.circle::before,
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color);
+    border-radius: 2rem 2rem;
+}
+.loader::before {
+    bottom: 0;
+    left: 0;
+    animation: animate 1.2s infinite linear;
+}
+.circle::before {
+    bottom: 0;
+    left: 30px;
+    animation: animate 1.2s 0.2s infinite linear;
+}
+.circle::after {
+    bottom: 0;
+    right: 30px;
+    animation: animate 1.2s 0.4s infinite linear;
+}
+.loader::after {
+    bottom: 0;
+    right: 0;
+    animation: animate 1.2s 0.6s infinite linear;
+}
+p {
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    color: var(--color);
+    font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 17px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+@keyframes animate {
+    0%,
+    100% {
+        height: 20px;
+    }
+    50% {
+        height: 100px;
+    }
+}

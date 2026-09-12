@@ -1,0 +1,200 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+}
+/* Season 1 */
+.TransformBox {
+    width: 300px;
+    height: 300px;
+    border: 1px dashed red;
+    margin: 30px auto;
+}
+.Transform {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+
+    /* transform: translateX(100px); */
+    /* transform: translateY(-100px); */
+    /* transform: translate(100px,100px); */
+
+    /* transform: scaleX(1.5); */
+    /* transform: scaleY(0.5); */
+    /* transform: scale(1.5); */
+
+    /* transform: rotate(45deg); */
+    /* transform: rotate(10grad); */
+    /* transform: rotate(-10rad); */
+    /* transform: rotate(0.4turn); */
+
+    /* transform: skewX(10deg); */
+    /* transform: skewY(-10deg); */
+    /* transform: skew(10deg,-50deg); */
+
+    /* transform-origin: 0% 0%; */
+    /* transform-origin: bottom right; */
+
+    transform: scale(1.3) rotate(-20deg) skew(50deg);
+}
+.season {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px auto;
+    display: block;
+
+    /* transform: translate(100px); */
+    /* transform: scale(0.5); */
+    /* transform: rotate(40deg); */
+    /* transform: skew(-30deg); */
+}
+/* Season 2 */
+.button {
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    margin: 30px auto;
+
+    /* transition-property: background-color, width, height; */
+    /* transition-duration: 10s, 2s, 5s; */
+    /* transition-timing-function: cubic-bezier(0.69,1.38,0.55,-0.3); */
+    /* transition-delay: 2s; */
+
+    /* transition: background-color 10s, width 2s, height 5s; */
+    transition: all 2s cubic-bezier(0.69, 1.38, 0.55, -0.3) 2s;
+}
+.button:hover {
+    background-color: blue;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+.transition {
+    color: white;
+    background-color: red;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    transition-property: margin-left;
+    transition-duration: 4s;
+}
+.container:hover .transition {
+    margin-left: 90%;
+}
+.cubic {
+    transition-timing-function: cubic-bezier(0.69, 1.38, 0.55, -0.3);
+}
+.delay {
+    transition-delay: 2s;
+}
+.steps {
+    transition-timing-function: steps(10);
+}
+.steps-start {
+    transition-timing-function: steps(10, start);
+}
+.steps-end {
+    transition-timing-function: steps(10, end);
+}
+.ease {
+    transition-timing-function: ease;
+}
+.ease-in {
+    transition-timing-function: ease-in;
+}
+.ease-out {
+    transition-timing-function: ease-out;
+}
+.ease-in-out {
+    transition-timing-function: ease-in-out;
+}
+.linear {
+    transition-timing-function: linear;
+}
+.step-start {
+    transition-timing-function: step-start;
+}
+.step-end {
+    transition-timing-function: step-end;
+}
+/* Season 3 */
+@keyframes moving {
+    0% {
+        transform: translateX(0px) rotateZ(500deg);
+        border-radius: 10%;
+        background-color: white;
+    }
+    20% {
+        transform: translateX(500px) rotateZ(-1000deg);
+        border-radius: 50%;
+        background-color: blue;
+    }
+    40% {
+        transform: translateX(250px);
+        border-radius: 25%;
+        background-color: red;
+    }
+    60% {
+        transform: translateX(-500px) rotateZ(1000deg);
+        border-radius: 50%;
+        background-color: blue;
+    }
+    80% {
+        transform: translateX(-250px);
+        border-radius: 25%;
+        background-color: red;
+    }
+    100% {
+        transform: translateX(0px);
+        border-radius: 10%;
+        background-color: white;
+    }
+}
+.AnimationBox {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 30px auto;
+
+    /* animation-name: moving;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(1,-0.69, 0, 1.85);
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite; */
+
+    animation: moving 10s 1s cubic-bezier(1, -0.69, 0, 1.85) forwards
+        alternate-reverse infinite;
+}
+/* Season 4 */
+.container3d {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    margin: 30px auto;
+
+    perspective: 400px;
+    perspective-origin: 50% 50%;
+}
+.card3d {
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    transform-style: preserve-3d; /* flat,preserve-3d */
+}
+.box3d {
+    width: 150px;
+    height: 150px;
+    background-color: brown;
+
+    transform: rotate3d(1, 2, 1.2, 30deg);
+}
+.container3d:hover .card3d {
+    /* transform: translate3d(x,y,z); */
+    /* transform: translateX(100px) translateY(50px) translateZ(-200px); */
+    /* transform: translateZ(-200px); */
+    /* transform: scaleZ(4) rotateX(45deg); */
+    /* transform: rotateZ(35deg); */
+    /* transform: translate3d(10px, 20px, 30px); */
+
+    transform: rotate3d(2, 2, 2, 45deg);
+}

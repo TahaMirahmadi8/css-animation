@@ -1,0 +1,42 @@
+:root{
+    --color-1: green;
+    --color-2: white;
+    --bg-color: #272727;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: var(--color-1);
+    font-family: sans-serif;
+    font-size: 2rem;
+    border: 0.2rem solid var(--color-1);
+    padding: 1rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(0.48, 2.18, 0.04, -0.09);
+}
+a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-1);
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: all 1s cubic-bezier(0.48, 2.18, 0.04, -0.09);
+}
+a:hover {
+    color: var(--color-2);
+}
+a:hover::before {
+    transform: translateY(0);
+}
